@@ -20,6 +20,7 @@
 
 	<!-- Custom Browsers Color End -->	
 	<link rel="stylesheet" href="css/datepicker.min.css">
+  <link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
@@ -224,8 +225,10 @@
                     <label for="number2">Бассейн</label>
                   </div>
                   <div class="more-btns">
-                    <button class="success" type="button">
-                      Применить
+                    <button class="success btn" type="button">
+                      <span>
+                        Применить
+                      </span>
                     </button>
                     <button class="cancel" type="button">
                       Отмена
@@ -237,7 +240,11 @@
                 <span class="selected">Выбрано:</span>
                 <span class="choise">Выберите дополнительные параметры...</span>
               </div>
-              <button type="button" class="form-btn">Подобрать проживание</button>
+              <button type="button" class="form-btn btn">
+                <span>
+                  Подобрать проживание
+                </span>
+              </button>
               <p class="confidence">
                 Нажимая эту кнопку вы даете согласие на обработку
                 ваших <a href="#" class="confidence__link">персональных даных</a>
@@ -248,8 +255,241 @@
       </div>
     </div>
   </header>
+  <main>
+    <section class="how">
+      <div class="container">
+        <h2 class="how-title section-title">
+          Как это работает
+        </h2>
+        <ul class="how-list">
+          <li class="how-list__item">
+            <span class="how-list__num">
+              1
+            </span>
+            <p class="how-list__text">
+              Вы заполняете форму по
+              нужным вам параметрам
+              и отправляете ее
+            </p>
+          </li>
+          <li class="how-list__item">
+            <span class="how-list__num">
+              2
+            </span>
+            <p class="how-list__text">
+              Отели в нужной локации
+              получают вашу заявку
+              и обрабатывают ее
+            </p>
+          </li>
+          <li class="how-list__item">
+            <span class="how-list__num">
+              3
+            </span>
+            <p class="how-list__text">
+              Вам приходит сообщение
+              с лучшими ценами от
+              отелей
+            </p>
+          </li>
+          <li class="how-list__item">
+            <span class="how-list__num">
+              4
+            </span>
+            <p class="how-list__text">
+              Вы выбираете наиболее
+              понравившийся отель
+              и бронируете его
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="about">
+      <div class="container">
+        <h2 class="about-title section-title">
+          О сервисе
+        </h2>
+        <div class="about-wrapp">
+          <ul class="about-list">
+            <li class="about-list__item">
+              <span class="about-icon">
+                <img src="img/about-icon1.png" alt="about-icon">
+              </span>
+              <h4 class="about-subtitle">
+                Большая база<br>
+                отелей
+              </h4>
+            </li>
+            <li class="about-list__item">
+              <span class="about-icon">
+                <img src="img/about-icon2.png" alt="about-icon">
+              </span>
+              <h4 class="about-subtitle">
+                Персональные
+                предложения от отелей
+              </h4>
+            </li>
+            <li class="about-list__item">
+              <span class="about-icon">
+                <img src="img/about-icon3.png" alt="about-icon">
+              </span>
+              <h4 class="about-subtitle">
+                Бесплатный сервис<br>
+                для вас
+              </h4>
+            </li>
+            <li class="about-list__item">
+              <span class="about-icon">
+                <img src="img/about-icon4.png" alt="about-icon">
+              </span>
+              <h4 class="about-subtitle">
+                Простота в
+                использовании
+              </h4>
+            </li>
+            <li class="about-list__item">
+              <span class="about-icon">
+                <img src="img/about-icon5.png" alt="about-icon">
+              </span>
+              <h4 class="about-subtitle">
+                Минимум затрат
+                времени
+              </h4>
+            </li>
+            <li class="about-list__item">
+              <span class="about-icon">
+                <img src="img/about-icon6.png" alt="about-icon">
+              </span>
+              <h4 class="about-subtitle">
+                Лучшие предложения
+                от отелей
+              </h4>
+            </li>
+          </ul>
+          <div class="about-text">
+            <p>
+              Restork - молодой сервис онлайн бронирования, с совершенно новым видением работы сферы гостеприимства.
+              Сервис разработан для максиманого упрощения поиска лучшего предложения для Вашего отдыха.
+            </p>
+            <p>
+              Мы искренне верим что отдых может быть не дорогим и максимально подходящим для Вас по условиям проживания.
+            </p>
+          </div>
+        </div>
+        <a href="#" class="choise-btn btn">
+          <span>Подобрать отель</span>
+        </a>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="container">
+        <h2 class="contacts-title section-title">
+          Контакты
+        </h2>
+        <ul class="contacts-list">
+          <li class="contacts-item">
+            <img src="img/tel-icon.png" alt="tel-icon">
+            <div class="contact-wrapp">
+              <p class="contacts-subtitle">
+                По всем вопросам:
+              </p>
+              <a href="tel:88005556688" class="contacts-info">
+                8 (800) 555-66-88
+              </a>
+            </div>
+          </li>
+          <li class="contacts-item">
+            <img src="img/email-icon.png" alt="email-icon">
+            <div class="contact-wrapp">
+              <p class="contacts-subtitle">
+                Электронная почта:
+              </p>
+              <a href="mailto:info@restork.ru" class="contacts-info">
+                info@restork.ru
+              </a>
+            </div>
+          </li>
+          <li class="contacts-item">
+            <img src="img/point-icon.png" alt="point-icon">
+            <div class="contact-wrapp">
+              <p class="contacts-subtitle">
+                Юридический адрес:
+              </p>
+              <p class="contacts-info">
+                353445, г. Анапа,<br>
+                Лазурная ул., 33, офис 105
+              </p>
+            </div>
+          </li>
+        </ul>
+        <div class="requisite">
+          <h3 class="requisite-title">
+            Реквизиты
+          </h3>
+          <p class="requisite-text">
+            ИП Петов Владимир Иванович
+          </p>
+          <p class="requisite-text">
+            ИНН 230108781065
+          </p>
+          <p class="requisite-text">
+            ОГРН 305230122700047
+          </p>
+          <div class="requisite-document">
+            <a href="img/picture1-full.png" data-lightbox="document" class="photo-link">
+              <img src="img/picture1.png" alt="document">
+            </a>
+            <a href="img/picture1-full.png" data-lightbox="document" class="photo-link">
+              <img src="img/picture2.png" alt="document">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wrapp">
+        <a href="/" class="logo-link">
+          <img src="img/restork.png" alt="logo">
+        </a>
+        <nav>
+          <ul class="menu">
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                Подобрать проживание
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                Как это работает
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                О сервисе
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <a href="tel:88005556688" class="footer-phone">
+          8 (800) 555-66-88
+        </a>
+      </div>
+      <div class="footer-info">
+        All rights reserve | <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
 
 	<script src="js/scripts.min.js"></script>
+	<script src="libs/lightbox.min.js"></script>
 
 
 </body>

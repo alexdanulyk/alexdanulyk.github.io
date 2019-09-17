@@ -98,4 +98,13 @@ $(function() {
     $(".choise").text(values.join(', '));
   });
 
+  // Lightbox
+
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true,
+    'albumLabel': '',
+    'disableScrolling': true
+  })   
+
 });
