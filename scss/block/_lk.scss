@@ -1,6 +1,6 @@
 .lk {
   padding-top: 80px;
-  padding-bottom: 296px;
+  padding-bottom: 296px;  
   &-wrapp {
     display: flex;    
     justify-content: space-between;
@@ -188,10 +188,12 @@
     }
   }
   &-main {
+    position: relative;
     flex-grow: 1;
     border-radius: 20px;
     box-shadow: 0px 0px 12.09px 0.91px rgba(0, 0, 0, 0.13);
     padding: 40px;
+    background: #fff;
     @media screen and (max-width: 1200px){
       padding: 35px;
     }
@@ -205,6 +207,7 @@
       font-size: 28px;
       font-weight: 700;
       text-align: center;
+      margin-bottom: 37px;
       @media screen and (max-width: 576px){
         font-size: 20px;
       }
@@ -218,21 +221,23 @@
         height: 1px;
         position: absolute;
         left: 0;
-        top: 54%;
+        top: 51%;
         transform: translateY(-50%);
         background: #d9d9d9;
         @media screen and (max-width: 768px){
-          top: 53%;
+          top: 50%;
         }
       }
       &-title {
         font-size: 18px;
         font-weight: 600;
-        margin-bottom: 28px;
-        padding-top: 37px;
+        margin-bottom: 28px;        
         @media screen and (max-width: 576px){
           font-size: 16px;
           text-align: center;
+        }
+        &:last-of-type {
+          padding-top: 30px;
         }
       }
       &-list {        

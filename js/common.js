@@ -36,19 +36,20 @@ $(function() {
 
   $('.hamburger').on('click', function(){
     $(this).toggleClass('is-active');
+    $('.nav-wrapp').toggleClass('active');
   });
 
   // SELECT SETTINGS
 
-  $('#way').on('focus', function() {
-    $('.select-wrapp').slideDown(250);
+  $('.input-way').on('focus', function() {
+    $(this).siblings('.select-wrapp').slideDown(250);
   });
-  $('#way').on('blur', function() {
-    $('.select-wrapp').slideUp(250);
+  $('.input-way').on('blur', function() {
+    $(this).siblings('.select-wrapp').slideUp(250);
   });
 
   $('.select-list__item').on('click', function() {
-    var inputWay = $('#way');
+    var inputWay = $(this).closest('.form-group.way').find('.input-way');
     var selectItem = $(this).children('.select-list__way').text();
 
     inputWay.val(selectItem);
@@ -186,8 +187,8 @@ $(function() {
   })
 
   // Вычисляем количество картинок в слайдере
-  var allPicture = $('.galery-list .owl-item').length;  
-  $('.counter .all-num').text(allPicture);
+  var allPicture = $('.choise-image .galery-list .owl-item').length;  
+  $('.choise-image .counter .all-num').text(allPicture);
   
   // Появление контактов при клике на кнопку
 
@@ -219,3 +220,95 @@ $(function() {
   });
 
 });
+
+
+// Aplications tabs dropDown
+
+$('.aplications-info').on('click', function() {
+  $(this).next().slideToggle();
+  $(this).find('i.fa-sort-down').toggleClass('active');
+  $('.aplications-info').not(this).next('.aplications-more').slideUp();
+})
+ 
+// Слайдер заявок
+
+var appSlider = $('.aplications-wrapp');
+var currentList = 1;
+
+appSlider.owlCarousel({  
+  nav: false,
+  dots: false,
+  items: 1
+});
+
+// Вычисляем количество list в заявках
+var allApp = $('.aplications .aplications-wrapp .owl-item').length;  
+$('.aplications-nav .counter .all-num').text(allApp);
+
+$('.aplications-nav .arrow-left').click(function() {
+  appSlider.trigger('prev.owl.carousel');
+  
+  if (currentList > 1 && currentList <= allApp) {      
+    currentList--;
+    $('.aplications-nav .counter .current-num').text(currentList);           
+  } 
+})
+$('.aplications-nav .arrow-right').click(function() {
+  appSlider.trigger('next.owl.carousel');
+  if (currentList >= 1 && currentList < allApp) {      
+    currentList++;
+    $('.aplications-nav .counter .current-num').text(currentList);           
+  }
+  
+})
+
+
+
+// Загрузка файлов
+
+function handleFileSelect(evt) {
+  var files = evt.target.files; // FileList object
+
+  // Loop through the FileList and render image files as thumbnails.
+  for (var i = 0, f; f = files[i]; i++) {
+
+    // Only process image files.
+    if (!f.type.match('image.*')) {
+      continue;
+    }
+
+    var reader = new FileReader();
+
+    // Closure to capture the file information.
+    reader.onload = (function(theFile) {
+      return function(e) {
+        // Render thumbnail.
+        var span = document.createElement('span');
+        span.classList.add('photo-wrap');
+
+        span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                          '" title="', escape(theFile.name), '"/>', '<span class="remove">&times;</span>'].join('');
+        document.querySelector('.photos-list').insertBefore(span, null);
+
+
+        $('.photo-wrap .remove').on('click', function () {
+          // var itemIdx = $(this).closest('..photo-wrap').index();
+          console.log('test');
+          
+          $(this).closest('.photo-wrap').remove();
+        })
+      };
+      
+    })(f);
+
+    // Read in the image file as a data URL.
+    reader.readAsDataURL(f);
+
+    
+  }
+  
+}
+
+
+document.getElementById('input-photos').addEventListener('change', handleFileSelect, false);
+

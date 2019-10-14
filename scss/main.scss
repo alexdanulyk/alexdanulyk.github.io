@@ -213,11 +213,24 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 992px){
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    align-items: flex-start;
+    border-bottom: 1px solid #cfcfcf;
+    padding-left: 20px;
+  }
   &__item {
     position: relative;
     padding: 0px 16px;
     @media screen and (max-width: 1200px){
       padding: 0px 10px;
+    }
+    @media screen and (max-width: 992px){
+      padding: 0;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
   }
   &__link {
@@ -268,6 +281,7 @@ button {
   }
   &-nav {
     padding: 31px 0;
+    position: relative;
     @media screen and (max-width: 992px){
       background: #fff;      
       box-shadow: 0px 8px 14.72px 1.28px rgba(0, 0, 0, 0.3);
@@ -282,6 +296,7 @@ button {
     }
   }
   .nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -295,17 +310,47 @@ button {
         }
       }
     } 
-    &-wrapp {
+    &-wrapp {      
       display: flex;
       align-items: center;
       justify-content: space-between;
+      
       width: calc(100% - 335px);
+      
+      transition: op .25s;
       @media screen and (max-width: 1200px){
         width: calc(100% - 240px);
       }
+      @media screen and (max-width: 992px){
+        position: absolute;
+        top: -20px;
+        right: 0;
+        z-index: 10;
+        pointer-events: none;
+        flex-direction: column;
+        opacity: 0;
+        width: 300px;
+        background: #fff;
+        box-shadow: 0px 6px 32px 0px rgba(0, 0, 0, 0.15);
+      }
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
       nav {
         @media screen and (max-width: 992px){
+          display: block;
+        }
+        .menu-title {
           display: none;
+          @media screen and (max-width: 992px){
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            height: 98px;
+            padding-left: 20px;
+            line-height: 98px;
+          }
         }
       }
     } 
@@ -315,7 +360,9 @@ button {
     justify-content: space-between;
     align-items: center;
     @media screen and (max-width: 992px){
-      display: none;
+      display: block;
+      width: 100%;
+      padding-left: 20px;
     }
     &__icon {
       display: flex;
@@ -334,16 +381,28 @@ button {
         width: 40px;
         height: 40px;
       }
+      @media screen and (max-width: 992px){
+        display: none;
+      }
     }
     &__links {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 146px;      
+      width: 146px;
+      @media screen and (max-width: 992px){
+        flex-direction: column;
+        align-items: flex-start;
+      }    
     }
     &__link {
       position: relative;
-      color: #000;      
+      color: #000;
+      @media screen and (max-width: 992px){
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-weight: 600;
+      }   
       &:after {
         content: '';
         display: block;
@@ -374,6 +433,9 @@ button {
           width: 1px;
           height: 100%;
           background: grey;
+          @media screen and (max-width: 992px){
+            display: none;
+          } 
         }
       }
     }
@@ -383,6 +445,8 @@ button {
     @media screen and (max-width: 992px){
       display: block;
       cursor: pointer;
+      position: relative;
+      z-index: 15;
     }
   }
   .main {    
@@ -531,8 +595,7 @@ button {
                   color: #000;
                   font-weight: 600;
                 }
-              } 
-                          
+              }                          
             }
             &.way {
               &:after {
@@ -1121,3 +1184,7 @@ button {
 @import "block/page-sign";
 @import "block/lk";
 @import "block/editing";
+@import "block/aplications";
+@import "block/new-fecility";
+@import "block/current";
+@import "block/new-app";
